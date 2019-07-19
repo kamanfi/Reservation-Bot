@@ -1,4 +1,4 @@
-# ThisCord
+# Reservation-Bot
 
 [Live Site incoming...](#)
 
