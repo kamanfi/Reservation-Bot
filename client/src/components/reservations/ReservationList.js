@@ -26,7 +26,9 @@ function ReservationList(props) {
     }, []);
 
     let ReserveCol = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let CurrentHour = moment(Date.now()).format("h")
+    let CurrentHour = moment(Date.now()).format("h");
+    let day = moment(Date.now()).format("a");
+    console.log(day);
     let results = reservations.map(reservation => {
         //if the same day
         if (moment(reservation.reservation_date).format("dddd, MMMM Do YYYY") === moment(Date.now()).format("dddd, MMMM Do YYYY")) {
