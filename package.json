@@ -13,7 +13,8 @@
     "client": "npm start --prefix client",
     "backend-install": "npm install --prefix server",
     "backend": "npm start --prefix server",
-    "start": "concurrently \"npm run backend\" \"npm run client\""
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "start": "npm run backend"
   },
   "repository": {
     "type": "git",
