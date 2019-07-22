@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "[Live Site incoming...](#)",
   "main": "index.js",
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "react-router-dom": "^5.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "backend-install": "npm install --prefix server",
+    "backend": "npm start --prefix server",
+    "dev": "concurrently \"npm run backend\" \"npm run client\""
   },
   "repository": {
     "type": "git",
