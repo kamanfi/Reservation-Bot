@@ -44,7 +44,7 @@ function validator(restaurant_name, ampm, time, date_now, reser_date_obj,result)
             msg: `We have not mastered time travel yet....Please pick a time in the future`
         };
     } else if (restaurantExist(restaurant_name) === false) {
-        console.log(result);
+        // console.log(result);
         return {
             valid: false,
             msg: `${restaurant_name} is not part of our chain of Restaurants`
