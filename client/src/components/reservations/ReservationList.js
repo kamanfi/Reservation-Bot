@@ -28,12 +28,14 @@ function ReservationList(props) {
     let ReserveCol = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let CurrentHour = moment(Date.now()).format("h");
     let day = moment(Date.now()).format("a");
-    console.log(day);
     let results = reservations.map(reservation => {
-        //if the same day
-        if (moment(reservation.reservation_date).format("dddd, MMMM Do YYYY") === moment(Date.now()).format("dddd, MMMM Do YYYY")) {
-            let hour = parseInt(moment(reservation.reservation_date).format("h"));
-            let booking = moment(reservation.reservation_date).format("hA");
+        // console.log(moment(reservation.reservationDate).format("dddd, MMMM Do YYYY"))
+        // console.log(moment(Date.now()).format("dddd, MMMM Do YYYY"));
+        // console.log(Date.now());
+
+        if (moment(reservation.reservationDate).format("dddd, MMMM Do YYYY") === moment(Date.now()).format("dddd, MMMM Do YYYY")) {
+            let hour = parseInt(moment(reservation.reservationDate).format("h"));
+            let booking = moment(reservation.reservationDate).format("hA");
             ReserveCol[hour - 1] = (booking);
         }
     })

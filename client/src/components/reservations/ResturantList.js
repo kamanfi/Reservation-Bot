@@ -8,8 +8,7 @@ function ResturantList() {
     useEffect(() => {
         async function fetchReservations() {
             const res = await fetch('/reservations/restaurants');
-            res
-                .json()
+            res.json()
                 .then(res => setRestaurants(res));
         }
 
