@@ -13,7 +13,7 @@
     "client": "npm start --prefix client",
     "backend-install": "npm install --prefix server",
     "backend": "npm start --prefix server",
-    "dev": "concurrently \"npm run backend\" \"npm run client\""
+    "start": "concurrently \"npm run backend\" \"npm run client\""
   },
   "repository": {
     "type": "git",
