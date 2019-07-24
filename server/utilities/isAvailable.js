@@ -12,20 +12,30 @@ function timeValidation(reser_date_obj, present_date_obj) {
 }
 
 
-
-   async function restaurantExist(restaurant_name){
-      result = false
-     await Restaurants.findOne({'name': restaurant_name}, (err,restaurant) =>{
-        
-         if(err){
-             console.log(err);
-         }
-         console.log(restaurant);
-          result = ((restaurant === null) ? false : true);
-          
-     });
-     return result
+// modern promises w/ async await 
+async function restaurantExist1(name){
+    return await Restaurants.findOne({name});
 }
+
+// vanilla promises
+function restaurantExist2(name){
+    return Restaurants.findOne({name});
+}
+
+// function x(err, res) {
+//     console.log('x', res);
+// }
+// callbacks
+function restaurantExist3(name, cb){
+    return Restaurants.findOne({name}, cb);
+}
+
+
+restaurantExist1('Killamanjaro').then((res) => console.log(res));
+restaurantExist2('Killamanjaro').then((res) => console.log(res));
+restaurantExist3('Killamanjaro', (err, res)=> console.log(res));
+
+
 
 function validator(restaurant_name, ampm, time, date_now, reser_date_obj,result) {
     //returns underfined if restaurant does not exisit
@@ -72,6 +82,4 @@ function validator(restaurant_name, ampm, time, date_now, reser_date_obj,result)
     }
 
 }
-console.log(restaurantExist('Killamanjaro') );
-
 module.exports = validator;

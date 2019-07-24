@@ -70,7 +70,6 @@ router.get('/restaurants', function (req, res, next) {
 });
 
 router.post('/list', function (req, res, next) {
-  console.log(req.body.name);
   Reservations.find({restaurantName: req.body.name}, (err,reservations) =>{
     // console.log(reservations)
     let reservationsList=[];
