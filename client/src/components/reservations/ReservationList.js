@@ -29,9 +29,6 @@ function ReservationList(props) {
     let CurrentHour = moment(Date.now()).format("h");
     let day = moment(Date.now()).format("a");
     let results = reservations.map(reservation => {
-        // console.log(moment(reservation.reservationDate).format("dddd, MMMM Do YYYY"))
-        // console.log(moment(Date.now()).format("dddd, MMMM Do YYYY"));
-        // console.log(Date.now());
 
         if (moment(reservation.reservationDate).format("dddd, MMMM Do YYYY") === moment(Date.now()).format("dddd, MMMM Do YYYY")) {
             let hour = parseInt(moment(reservation.reservationDate).format("h"));

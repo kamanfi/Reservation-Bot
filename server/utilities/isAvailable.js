@@ -6,8 +6,6 @@ const Reservations = require('../models/Reservations');
 let file = editJsonFile('./db/file.json');
 
 function timeValidation(reser_date_obj, present_date_obj) {
-    // console.log(reser_date_obj);
-    // console.log(present_date_obj);
     return reser_date_obj.getTime() > present_date_obj.getTime();
 }
 

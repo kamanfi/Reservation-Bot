@@ -62,7 +62,6 @@ router.post('/sms', function (req, res, next) {
 router.get('/restaurants', function (req, res, next) {
 
   Restaurants.find({}, (err,restaurants) =>{
-    // console.log(restaurants)
     let restaurantsNames=[];
     restaurantsNames=restaurants.map((restaurant)=> restaurant.name)
     res.json(restaurantsNames);
